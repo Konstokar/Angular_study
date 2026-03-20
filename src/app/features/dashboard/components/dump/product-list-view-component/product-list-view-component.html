@@ -1,0 +1,12 @@
+<input [(ngModel)]="filter" />
+<p>Product filter -> {{filter}}</p>
+
+@if (products.length === 0) {
+  <p>No data</p>
+} @else {
+  <ul>
+    @for (product of products; track product) {
+      <li>{{product | shortenText : 20}}</li>
+    }
+  </ul>
+}

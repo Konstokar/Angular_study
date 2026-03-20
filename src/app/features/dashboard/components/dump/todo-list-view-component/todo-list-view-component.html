@@ -1,0 +1,18 @@
+<input [(ngModel)]="project" />
+<p>Project: {{project}}</p>
+<input
+  #todoInput
+  placeholder="New todo"
+/>
+
+@if (tasks.length === 0) {
+  <p>No data</p>
+} @else {
+  <ul>
+    @for (task of tasks; track task) {
+      <li>Task: {{task}}</li>
+    }
+  </ul>
+}
+
+<button (click)="add.emit(todoInput.value)"></button>
